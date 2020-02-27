@@ -1,0 +1,73 @@
+.bigPicBox{
+    position: relative;
+    /*width: 100%;*/
+
+    height: 3.80rem;
+    overflow: hidden;
+}
+
+.bigPicCont{
+    height: 100%;
+}
+
+
+.bigPicCont img{
+    /*height: 100%;*/
+    /*width: 100%;*/
+    display: block;
+    height: 100%;
+    /*position: absolute;*/
+}
+
+.bigPic{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/*.bigPic3,.bigPic2{*/
+/*    display: none;*/
+/*}*/
+
+.bigIntro{
+    left:1.0rem;
+    position: absolute;
+    width: 1.9rem;
+    /*height: 0.5rem;*/
+    top:1.3rem;
+    background:none;
+    font-size: 0;
+}
+
+.bigIntro p{
+    font-size: 0.25rem;
+    text-align: center;
+    color: #f8f8f9;
+    background:none;
+}
+
+.smallIntro{
+    left: 1.0rem;
+    position: absolute;
+    top: 1.8rem;
+    width: 1.9rem;
+    background:none;
+}
+
+.smallIntro p{
+    font-size: 0.15rem;
+    text-align: center;
+    color: #f8f8f9;
+    background:none;
+}
+
+
+.bigPicBox>.next{
+    /*display: none;*/
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 0.5rem;
+    width: 0.5rem;
+    background-color: darkorange;
+}

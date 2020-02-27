@@ -1,0 +1,117 @@
+
+
+
+.contactBox{
+    /*font-size: 0.20rem;*/
+    width: 5.60rem;
+    margin:0 auto 0.25rem auto;
+    /*height: 2.40rem;*/
+    height: 2.40rem;
+    /*background-color: #003f42;*/
+    font-size: 0;
+}
+
+.infoBox{
+    font-size: 0.13rem;
+    color: #f8f8f9;
+    background-color: #0b0a08;
+    text-align: center;
+    width: 50%;
+    margin:0 auto;
+    position: relative;
+    top:0.20rem;
+
+}
+
+
+
+.row1{
+    margin-bottom:0.22rem;;
+}
+
+.row1>li{
+    font-size: 0;
+    display: block;
+    width: 32%;
+    /*height: 0.30rem;*/
+    float: left;
+    list-style: none;
+}
+
+li>input{
+    display: block;
+    height: 0.20rem;
+    width: 100%;
+    border: none;
+    background-color: rgba(51, 63, 80, 0.8);
+}
+
+
+.NameBox,.EmailBox{
+    margin-right: 2%;
+}
+
+.row1::after{
+    content:"";/*设置内容为空*/
+    height:0;/*高度为0*/
+    line-height:0;/*行高为0*/
+    display:block;/*将文本转为块级元素*/
+    visibility:hidden;/*将元素隐藏*/
+    clear:both;/*清除浮动*/
+}
+
+label{
+    font-size: 0.10rem;
+    line-height: 0.10rem;
+    display: block;
+    margin-bottom: 0.10rem;
+    color: #f8f8f9;
+}
+
+
+
+.massageBox{
+    /*height: 1.20rem;*/
+    font-size: 0;
+}
+
+.massageBox>textarea{
+    display: block;
+    height: 1.15rem;
+    width: 100%;
+    border: none;
+    background-color: rgba(51, 63, 80, 0.8);
+}
+
+button{
+    display: block;
+    margin: 0.23rem auto 0 auto;
+    height: 0.21rem;
+    width: 1.78rem;
+    background-color: rgba(164, 199, 249, 0.8);
+    border: none;
+    font-size: 0.10rem;
+}
+
+
+
+
+
+
+
+
+/* 底部版权所有,工信部reference：*/
+.ref{
+    display: block;
+    width: 100%;
+    height: 0.40rem;
+    line-height: 0.10rem;
+    padding: 0.15rem 0;
+    font-size: 0.08rem;
+    /*margin:0.02rem auto;*/
+    text-align: center;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #f8f8f9;
+    border-top: solid rgba(251, 251, 251, 0.62) 1px;
+}
