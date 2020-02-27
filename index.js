@@ -1,4 +1,5 @@
 $(function(){
+    //当前图片的标号
     picIndex=0;
 
     function jumpTo(i){
@@ -7,32 +8,72 @@ $(function(){
         return false;
     }
 
-    // 大图渐入渐出：
+    // 大图切换：
     $(".bigPic2").fadeOut(0);
     $(".bigPic3").fadeOut(0);
 
     $(".bigPicBox>.next").click(nextPic);
+    $(".bigPicBox>.last").click(lastPic);
+
+    setInterval(nextPic,3000);
 
     function nextPic() {
-        // console.log("picIndex:" + picIndex);
-        $(".bigPic").eq(picIndex).fadeOut(0, function () {
-            picIndex = (picIndex + 1) % 3;
-                $(".bigPic").eq(picIndex).fadeIn(0, function () {
-                    // console.log("picIndex:" + picIndex);
-                })
-        });
-        $(".bigIntro").eq(picIndex).css({left:0});
-        $(".bigIntro").eq(picIndex).animate({
-            left:"1.0rem"
-        },300,"swing");
-
-        $(".smallIntro").eq(picIndex).css({left:0});
-        $(".smallIntro").eq(picIndex).animate({
-            left:"1.0rem"
-        },300,"swing");
-
+        let i=(picIndex+1)%3;
+        $(".listTitle").eq(i).trigger('click');
     }
-    setInterval(nextPic,3000);
+
+    function lastPic() {
+        let i=picIndex-1;
+        i=i>-1?i:2;
+        $(".listTitle").eq(i).trigger('click');
+    }
+
+    $(".bigPicBox>.next").hover(function(){
+        $(this).animate({opacity:1});
+    },function(){
+        $(this).animate({opacity:0});
+    });
+    $(".bigPicBox>.last").hover(function(){
+        $(this).animate({opacity:1});
+    },function(){
+        $(this).animate({opacity:0});
+    });
+
+    //点击小标题切换图片：
+    $(".listTitle").click(function(){
+        //竖线消失
+        $(".listIcon").eq(picIndex).animate({opacity:0});
+        $(".listTitle").eq(picIndex).css({fontWeight:"normal"});
+        //竖线显示
+        //$(this).siblings().animate({opacity:1});
+        let idStr=$(this).attr("id").substring(5,6);
+        let id=parseInt(idStr);
+        $(".listIcon").eq(id).animate({opacity:1});
+        //字体：粗体
+        $(".listTitle").eq(id).css({fontWeight:"bold"});
+        changeBigPic(id);
+    })
+
+
+
+    //从picIndex的图片跳转到toIndex的图片
+    function changeBigPic(toIndex){
+        //当前图片fadeout：
+        $(".bigPic").eq(picIndex).fadeOut(0,
+            //fadeOut动作完成后开始跳出目标图片
+            function () {
+                picIndex=toIndex;
+                //目标图片图片闪现：
+                $(".bigPic").eq(picIndex).fadeIn(0);
+                //大文字滑动动画：
+                $(".bigIntro").eq(picIndex).css({left:0});
+                $(".bigIntro").eq(picIndex).animate({left:"1.0rem"},300,"swing");
+                //小文字滑动动画：
+                $(".smallIntro").eq(picIndex).css({left:0});
+                $(".smallIntro").eq(picIndex).animate({left:"1.0rem"},300,"swing");
+        });
+    }
+
 
 
     // 效果体验滑动切换
@@ -96,6 +137,8 @@ $(function(){
         $(this).hide();
         $(".leftBox>.imgBox").slideDown(2000);
     })
+
+
 
 
 
