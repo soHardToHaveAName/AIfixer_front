@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>焕影一新</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="topbar.css">
+    <link rel="stylesheet" href="bigPicBox.css">
+    <link rel="stylesheet" href="smallPicBox.css">
+    <link rel="stylesheet" href="effectBox.css">
+    <link rel="stylesheet" href="aboutBox.css">
+    <link rel="stylesheet" href="contactBox.css">
+    <script src="js/jquery.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+
+
+    <div class="bigPicBox">
+        <div class="topbar">
+            <div class="left">
+                <div>AIfixer</div>
+                <img src="img/AIfixer4.png" alt="">
+
+            </div>
+            <ul class="middle">
+<!--                <li><a href="">首页</a></li>-->
+                <li><a href="javascript:void(0)" onclick="jumpTo(0)">Home</a></li>
+                <li><a href="javascript:void(0)" onclick="jumpTo(1)">Product</a></li>
+                <li><a href="javascript:void(0)" onclick="jumpTo(2)">Effect</a></li>
+                <li><a href="javascript:void(0)" onclick="jumpTo(3)">About</a></li>
+                <li><a href="javascript:void(0)" onclick="jumpTo(4)">Contact</a></li>
+            </ul>
+            <div class="right">
+
+            </div>
+        </div>
+        <div class="bigPicCont">
+
+            <div class="bigPic1 bigPic">
+                <img src="img/bigImg1.jpg" alt="">
+                <div class="bigIntro">
+                    <p>智能上色</p>
+                </div>
+                <div class="smallIntro">
+                    <p>给回忆重绘绚丽色彩</p>
+                </div>
+            </div>
+
+            <div class="bigPic2 bigPic">
+                <img src="img/bigImg2.jpg" alt="">
+                <div class="bigIntro">
+                    <p>智能超分辨</p>
+                </div>
+                <div class="smallIntro">
+                    <p>感受高清视野</p>
+                </div>
+            </div>
+
+            <div class="bigPic3 bigPic">
+                <img src="img/bigImg3.jpg" alt="">
+                <div class="bigIntro">
+                    <p>智能去噪</p>
+                </div>
+                <div class="smallIntro">
+                    <p>还原你本来的美</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="next">
+
+        </div>
+    </div>
+
+    <div class="title">
+        <h2>Product</h2>
+        <img src="img/circle.png" alt="">
+    </div>
+
+    <div class="smallPicBox">
+        <img src="img/bs.jpg" alt="" class="smallPic1"><!--
+     --><img src="img/fb.jpg" alt="" class="smallPic2"><!--
+     --><img src="img/quZao2.jpg" alt="" class="smallPic3">
+    </div>
+
+    <div class="title">
+        <h2>Effect</h2>
+        <img src="img/circle.png" alt="">
+    </div>
+
+    <div class="effectBox">
+        <div class="leftSide">
+            <div class="left1">
+                <div class="leftBox" style="position: relative">
+                    <div class="imgBox" style="position: absolute;top:0;height:100%; width:100%;display: none">
+                        <img src="img/left1_after.png" width="100%" alt="">
+                    </div>
+
+                    <div class="leftBtn">
+                        体验
+                    </div>
+                </div>
+                <div class="leftText">
+                    智能上色
+                </div>
+                <div class="leftSmallText">
+                    多彩的趣味人生
+                </div>
+
+            </div>
+
+
+            <div class="left2" style="display: none">
+                <div class="leftBox" style="background-color: aquamarine" >
+                    <img src="" alt="">
+                    <div class="leftBtn">
+                        体验
+                    </div>
+                </div>
+                <div class="leftText">
+                    智能去噪
+                </div>
+                <div class="leftSmallText">
+                    清晰的旧日时光
+                </div>
+            </div>
+
+            <div class="leftIndexLine">
+                <a ref="javascript:void(0)" class="leftIndex1 chosen">
+                    01
+                </a>
+                <a ref="javascript:void(0)" class="leftIndex2">
+                    02
+                </a>
+            </div>
+
+
+
+        </div>
+
+        <div class="rightSide">
+            <div class="right1">
+                <div class="rightBox">
+                    <img src="" alt="">
+                    <div class="rightBtn">
+                        体验
+                    </div>
+                </div>
+                <div class="rightText">
+                    智能超分辨
+                </div>
+                <div class="rightSmallText">
+                    极致的视觉体验
+                </div>
+            </div>
+
+            <div class="right2" style="display: none">
+                <div class="rightBox" style="background-color: aqua">
+                    <img src="" alt="">
+                    <div class="rightBtn">
+                        体验
+                    </div>
+                </div>
+                <div class="rightText">
+                    智能上色
+                </div>
+                <div class="rightSmallText">
+                    独特的色彩碰撞
+                </div>
+            </div>
+
+            <div class="rightIndexLine">
+                <a ref="javascript:void(0)" class="rightIndex1 chosen">
+                    01
+                </a>
+                <a ref="javascript:void(0)" class="rightIndex2">
+                    02
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="aboutBox">
+        <div class="title">
+            <h2>About</h2>
+            <img src="img/circle.png" alt="">
+        </div>
+
+        <div class="bigHead">
+            通过我们
+        </div>
+        <div class="littleHead">
+            看到更美好的世界
+        </div>
+        <div class="text">
+            <p>如影科技自主研发的“焕影一新”是一个基于深度学习的专业级历史影像修复系统，提供</p>
+            <p>快速、高质量的智能影片修复服务。我们以人工智能技术为基础，通过视频语义检索</p>
+            <p>等技术，实现了超分辨、去噪、曝光平衡、划痕修复、上色和调色等一系列</p>
+            <p>对于低质量影像的精准修复。</p>
+        </div>
+        <ul class="icons">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+
+
+    <div class="title">
+        <h2>Contact</h2>
+        <img src="img/circle.png" alt="">
+    </div>
+
+    <div class="contactBox">
+<!--        <div class="infoBox">-->
+<!--            如影科技:ruying_fixer@163.com-->
+<!--        </div>-->
+        <ul class="row1">
+            <li class="NameBox">
+                <label>Name</label>
+                <input class="form-control" type="text" name="company">
+            </li>
+            <li class="EmailBox">
+                <label>Email</label>
+                <input class="form-control" type="text" name="duty">
+            </li>
+            <li class="TelBox">
+                <label>Tel</label>
+                <input class="form-control" type="text" name="comment">
+            </li>
+        </ul>
+
+        <div class="massageBox">
+            <label>Massage</label>
+            <textarea class="form-control" type="text" name="duty"></textarea>
+        </div>
+
+        <button type="submit" id="submit">Sent</button>
+    </div>
+
+    <a class="ref" href="http://www.beian.miit.gov.cn">
+        版权所有:如影科技&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陕ICP备18009052号-4
+    </a>
+
+
+</body>
+</html>

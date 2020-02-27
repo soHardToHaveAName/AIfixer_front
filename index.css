@@ -1,0 +1,60 @@
+*{
+    margin:0;
+    padding:0;
+
+    /*font-family: "Open Sans","PingFang SC","Microsoft YaHei","Helvetica Neue","Hiragino Sans GB","WenQuanYi Micro Hei",Arial,sans-serif!important;*/
+    /*font-family: "PingFang SC" !important;*/
+    /*font-family: "Hiragino Sans GB";*/
+}
+
+body,.topbar,.title,.smallPicBox{
+    background-color: #0b0a08;
+}
+
+.html{
+    /*font-size: 100px;*/
+}
+
+.body{
+    background-color: #0b0a08;
+}
+
+
+.title{
+    /*padding: 0.40rem 3.05rem;*/
+    margin:0 auto;
+    padding: 0.40rem 0;
+    width: 2rem;
+    /*width: 0.7rem;*/
+    position: relative;
+    /*border-bottom: #f8f8f9 solid 0.02rem;*/
+}
+
+.title img{
+    position: absolute;
+    /*position: relative;*/
+    width: 0.40rem;
+    top:0.28rem;
+    left: 0.90rem;
+    z-index: 1;
+    opacity: 0.3;
+    background: none;
+}
+
+.title h2{
+    position: relative;
+    /*background-color: #0b0a08;*/
+    background: none;
+    font-size: 0.15rem;
+    color: #f8f8f9;
+    text-align: center;
+    font-family: Lucida Family !important;
+    z-index: 2;
+}
+
+
+
+
+
+
+
