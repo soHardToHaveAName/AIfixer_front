@@ -68,5 +68,8 @@
     width: 2.28rem;
     height: 0.50rem;
     font-size: 0;
-    background-color: yellow;
+    background-image: url(img/icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60% 65%;
 }

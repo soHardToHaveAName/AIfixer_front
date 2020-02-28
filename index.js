@@ -15,7 +15,8 @@ $(function(){
     $(".bigPicBox>.next").click(nextPic);
     $(".bigPicBox>.last").click(lastPic);
 
-    setInterval(nextPic,3000);
+    var interval;
+	interval=setInterval(nextPic,3000);
 
     function nextPic() {
         let i=(picIndex+1)%3;
@@ -29,13 +30,19 @@ $(function(){
     }
 
     $(".bigPicBox>.next").hover(function(){
-        $(this).animate({opacity:1});
+        clearInterval(interval);
+		$(this).animate({opacity:1});
+		
     },function(){
+		interval=setInterval(nextPic,3000);
         $(this).animate({opacity:0});
     });
+	
     $(".bigPicBox>.last").hover(function(){
+		clearInterval(interval);
         $(this).animate({opacity:1});
     },function(){
+		interval=setInterval(nextPic,3000);
         $(this).animate({opacity:0});
     });
 
