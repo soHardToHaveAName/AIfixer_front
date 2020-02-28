@@ -25,8 +25,6 @@
     /*display: inline-block;*/
     float: left;
     margin-left: 0.50rem;
-    /*background-color: cornflowerblue;*/
-
     width: 1.50rem;
     height: 2.10rem;
     position: relative;
@@ -34,6 +32,21 @@
 
 .left1>.leftBox{
     background: url("img/left1_before.png") 0 0  no-repeat ;
+    background-size: cover;
+}
+
+.left2>.leftBox{
+    background: url("img/left2_before.jpg") 0 0  no-repeat ;
+    background-size: cover;
+}
+
+.right1>.rightBox{
+    background: url("img/right1_before.jpg") 0 0  no-repeat ;
+    background-size: cover;
+}
+
+.right2>.rightBox{
+    background: url("img/right2_before.jpg") 0 0  no-repeat ;
     background-size: cover;
 }
 
@@ -165,6 +178,7 @@
     margin-left: 0rem;
     width: 2.10rem;
     height:1.50rem;
+    overflow: hidden;
 }
 
 .right1,.right2{

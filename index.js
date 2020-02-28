@@ -102,9 +102,6 @@ $(function(){
                 // $(".left2").fadeIn();
             }
             else if($(this).hasClass("rightIndex1")){
-                // $(".right2").slideUp(800,function(){
-                //     $(".right1").slideDown(800);
-                // });
                 $(".right2").animate({
                     width: "0"
                 },800,function(){
@@ -118,10 +115,6 @@ $(function(){
 
             }
             else if($(this).hasClass("rightIndex2")){
-                // $(".right1").slideUp(800,function(){
-                //     $(".right2").slideDown(800);
-                //
-                // });
                 $(".right1").animate({
                     width: "0"
                 },800,function(){
@@ -142,7 +135,16 @@ $(function(){
 
     $(".leftBtn").click(function(){
         $(this).hide();
-        $(".leftBox>.imgBox").slideDown(2000);
+        $(this).siblings().slideDown(2000);
+    })
+
+    $(".rightBtn").click(function(){
+        $(this).hide();
+        let newImg=$(this).siblings();
+        newImg.css({display:"block",width:"0"});
+        newImg.animate({
+            width:"2.10rem",
+        },2000);
     })
 
 
