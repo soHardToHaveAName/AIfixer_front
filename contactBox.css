@@ -6,7 +6,6 @@
     width: 5.60rem;
     margin:0 auto 0.25rem auto;
     /*height: 2.40rem;*/
-    height: 2.40rem;
     /*background-color: #003f42;*/
     font-size: 0;
 }
@@ -105,4 +104,12 @@ button{
     text-decoration: none;
     color: #f8f8f9;
     border-top: solid rgba(251, 251, 251, 0.62) 1px;
+}
+
+.feedBack{
+    font-size: 0.08rem;
+    margin-top: 0.08rem;
+    width: 100%;
+    text-align: center;
+    color: #f8f8f9;
 }

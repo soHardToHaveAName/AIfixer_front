@@ -29,13 +29,14 @@ $(function(){
         $(".listTitle").eq(i).trigger('click');
     }
 
+    //鼠标放在半圆图标上时，停止计数器
     $(".bigPicBox>.next").hover(function(){
         clearInterval(interval);
 		$(this).animate({opacity:1});
 		
     },function(){
 		interval=setInterval(nextPic,3000);
-        $(this).animate({opacity:0});
+        $(this).animate({opacity:0.5});
     });
 	
     $(".bigPicBox>.last").hover(function(){
@@ -43,7 +44,7 @@ $(function(){
         $(this).animate({opacity:1});
     },function(){
 		interval=setInterval(nextPic,3000);
-        $(this).animate({opacity:0});
+        $(this).animate({opacity:0.5});
     });
 
     //点击小标题切换图片：
@@ -61,6 +62,13 @@ $(function(){
         changeBigPic(id);
     })
 
+    //鼠标放在小标题上时，停止计数器
+    $(".listTitle").hover(function(){
+        clearInterval(interval);
+    },function(){
+        interval=setInterval(nextPic,3000);
+    });
+
 
 
     //从picIndex的图片跳转到toIndex的图片
@@ -74,10 +82,10 @@ $(function(){
                 $(".bigPic").eq(picIndex).fadeIn(0);
                 //大文字滑动动画：
                 $(".bigIntro").eq(picIndex).css({left:0});
-                $(".bigIntro").eq(picIndex).animate({left:"1.0rem"},300,"swing");
+                $(".bigIntro").eq(picIndex).animate({left:"1.0rem"},500,"swing");
                 //小文字滑动动画：
                 $(".smallIntro").eq(picIndex).css({left:0});
-                $(".smallIntro").eq(picIndex).animate({left:"1.0rem"},300,"swing");
+                $(".smallIntro").eq(picIndex).animate({left:"1.0rem"},500,"swing");
         });
     }
 
@@ -88,19 +96,26 @@ $(function(){
         if(!($(this).hasClass("chosen"))) {
             $(this).siblings().removeClass("chosen");
             $(this).addClass("chosen");
-
             if($(this).hasClass("leftIndex1")){
                 $(".left2").slideUp(800,function(){
                     $(".left1").slideDown(800);
                 });
                 // $(".left1").fadeIn();
             }
-            else if($(this).hasClass("leftIndex2")){
-                $(".left1").slideUp(800,function(){
-                    $(".left2").slideDown(800);
+
+            else if($(this).hasClass("rightIndex2")){
+                $(".right1").animate({
+                    width: "0"
+                },800,function(){
+                    $(".right1").css({display:"none"});
+                    $(".right2").css({overflow:"hidden"});
+                    $(".right2").css({display:"block", width:"0"});
+                    $(".right2").animate({
+                        width:"2.40rem",
+                    },800)
                 });
-                // $(".left2").fadeIn();
             }
+
             else if($(this).hasClass("rightIndex1")){
                 $(".right2").animate({
                     width: "0"
@@ -114,18 +129,15 @@ $(function(){
                 });
 
             }
-            else if($(this).hasClass("rightIndex2")){
-                $(".right1").animate({
-                    width: "0"
-                },800,function(){
-                    $(".right1").css({display:"none"});
-                    $(".right2").css({overflow:"hidden"});
-                    $(".right2").css({display:"block", width:"0"});
-                    $(".right2").animate({
-                        width:"2.40rem",
-                    },800)
+
+            else if($(this).hasClass("leftIndex2")){
+                $(".left1").slideUp(800,function(){
+                    $(".left2").slideDown(800);
                 });
+                // $(".left2").fadeIn();
             }
+
+
         }
     }
     $(".leftIndexLine>a").click(choose);
@@ -148,36 +160,52 @@ $(function(){
     })
 
 
-    //Product 入场动画
+    //入场动画
 
-
-
-    smallHeight=$(".smallPicBox").css("height");
+    // product隐藏
+    let smallHeight=$(".smallPicBox").css("height");
+    let smallWidth=$(".smallPicBox").css("width");
+    let smallMargin=$(".smallPicBox").css("marginLeft");
     $(".smallPicBox").css("height",parseInt(smallHeight));
 
-    $(".smallPicBox>img").css({width:0});
+    console.log("smallWidth:"+smallWidth);
+    console.log("smallMargin:"+smallMargin);
+    $(".smallPicBox").css({marginLeft: "100%"});
+    $(".smallPicBox").css({width: smallWidth});
 
+    // Effect隐藏
+    $(".left1").slideUp(0);
+    $(".right1").css({overflow:"hidden"});
+    $(".right1").css({display:"block", width:"0"});
 
+    //监听页面滚动：
+    let hasAppeared1=false;
+    let hasAppeared2=false;
     $(window).scroll(function() {
         //为了保证兼容性，这里取两个值，哪个有值取哪一个
         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         var browHeight = document.documentElement.clientHeight || document.body.clientHeight;
 
-        halfH=$(".smallPicBox").css("height").substring(0,6);
-        H=$(".smallPicBox").offset().top+parseFloat(halfH);
-        console.log("scrollTop:"+scrollTop);
-        console.log("browHeight:"+browHeight);
-        console.log("H:"+H);
-        if(scrollTop+browHeight<H){
-            setTimeout(function(){
-                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-                var browHeight = document.documentElement.clientHeight || document.body.clientHeight;
-                if(scrollTop+browHeight>H){
-                    $(".smallPicBox>img").animate({width:"31.3%"});
-                }
-            },100);
+        //product动画：
+
+        H1=$(".smallPicBox").offset().top+parseFloat(smallHeight)/2;
+        if(scrollTop+browHeight>H1 && !hasAppeared1){
+             $(".smallPicBox").animate({marginLeft: smallMargin},600,"swing");
+             hasAppeared1=true;
         };
-    })
+
+        //effect动画：
+        H2=$(".effectBox").offset().top+parseFloat($(".effectBox").css("height"))/2;
+
+        if(scrollTop+browHeight>H2 && !hasAppeared2){
+            $(".left1").slideDown(800);
+            $(".right1").animate({
+                width:"2.40rem",
+            },800);
+            hasAppeared2=true;
+        }
+    });// $(window).scroll
+
 
 
 

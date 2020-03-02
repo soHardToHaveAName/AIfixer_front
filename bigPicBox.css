@@ -63,7 +63,7 @@
 
 
 .bigPicBox>.next,.bigPicBox>.last{
-    opacity: 0;
+    opacity: 0.5;
 }
 
 /*.bigPicBox>.next:hover,.bigPicBox>.last:hover{*/

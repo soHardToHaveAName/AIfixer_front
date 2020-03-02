@@ -1,3 +1,8 @@
+.smallBoxCont{
+    width: 100%;
+    overflow: hidden;
+}
+
 .smallPicBox{
     margin: 0 9.5%;
     font-size: 0;
@@ -15,7 +20,6 @@
     display: inline-block;
     float: left;
     margin: 0;
-    background: #de97ff;
     width: 31.3%;
     /*padding: 0 3%;*/
     /*box-sizing: border-box;*/
@@ -27,6 +31,5 @@
     display: inline-block;
     margin: 0 3%;
     width: 31.3%;
-    background: #de97ff;
 
 }

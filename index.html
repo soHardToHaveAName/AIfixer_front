@@ -97,11 +97,14 @@
         <img src="img/circle.png" alt="">
     </div>
 
-    <div class="smallPicBox">
-        <img src="img/bs.png" alt="" class="smallPic1"><!--
+    <div class="smallBoxCont">
+        <div class="smallPicBox">
+            <img src="img/bs.jpg" alt="" class="smallPic1"><!--
      --><img src="img/fb.jpg" alt="" class="smallPic2"><!--
      --><img src="img/quZao2.jpg" alt="" class="smallPic3">
+        </div>
     </div>
+
 
     <div class="title">
         <h2>Effect</h2>
@@ -117,7 +120,7 @@
                     </div>
 
                     <div class="leftBtn">
-                        体验
+                        一键体验
                     </div>
                 </div>
                 <div class="leftText">
@@ -136,7 +139,7 @@
                         <img src="img/left2_after.jpg" width="100%" alt="">
                     </div>
                     <div class="leftBtn">
-                        体验
+                        一键体验
                     </div>
                 </div>
                 <div class="leftText">
@@ -167,7 +170,7 @@
                         <img src="img/right1_after.jpg" height="100%" alt="">
                     </div>
                     <div class="rightBtn">
-                        体验
+                        一键体验
                     </div>
                 </div>
                 <div class="rightText">
@@ -184,7 +187,7 @@
                         <img src="img/right2_after.jpg" height="100%" alt="">
                     </div>
                     <div class="rightBtn">
-                        体验
+                        一键体验
                     </div>
                 </div>
                 <div class="rightText">
@@ -264,6 +267,7 @@
         </div>
 
         <button type="submit" id="submit" >Sent</button>
+        <p class='feedBack'>随时欢迎您的咨询！</p>
     </div>
 
     <a class="ref" href="http://www.beian.miit.gov.cn">
@@ -289,7 +293,7 @@
         if (aInputs[0].value && aInputs[1].value && aInputs[2].value && message.value) {
             $.ajax({
                 type: "post",
-                url: "http://localhost:8080/contact",
+                url: "172.81.247.83/contact",
                 data: {"name": aInputs[0].value,
                     "email": aInputs[1].value,
                     "tel":aInputs[2].value,
@@ -298,9 +302,12 @@
                     console.log("发送成功！我们将在看到您的消息后与您联系！");
                 }
             });//ajax
+            $(".feedBack").text("发送成功！我们将在第一时间内与您联系！");
+
+
         }
         else{
-            alert("请输入完整信息！");
+            $(".feedBack").text("请输入完整信息！");
         }
     }
 </script>
