@@ -70,12 +70,12 @@ label{
 
 
 
-.massageBox{
+.messageBox{
     /*height: 1.20rem;*/
     font-size: 0;
 }
 
-.massageBox>textarea{
+.messageBox>textarea{
     display: block;
     height: 1.15rem;
     width: 100%;

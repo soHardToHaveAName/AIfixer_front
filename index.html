@@ -27,11 +27,11 @@
             </div>
             <ul class="middle">
 <!--                <li><a href="">首页</a></li>-->
-                <li><a href="javascript:void(0)" onclick="jumpTo(0)">Home</a></li>
-                <li><a href="javascript:void(0)" onclick="jumpTo(1)">Product</a></li>
-                <li><a href="javascript:void(0)" onclick="jumpTo(2)">Effect</a></li>
-                <li><a href="javascript:void(0)" onclick="jumpTo(3)">About</a></li>
-                <li><a href="javascript:void(0)" onclick="jumpTo(4)">Contact</a></li>
+                <li class="nav"><a href="javascript:void(0)" onclick="jumpTo(0)">Home</a></li>
+                <li class="nav"><a href="javascript:void(0)" onclick="jumpTo(1)">Product</a></li>
+                <li class="nav"><a href="javascript:void(0)" onclick="jumpTo(2)">Effect</a></li>
+                <li class="nav"><a href="javascript:void(0)" onclick="jumpTo(3)">About</a></li>
+                <li class="nav"><a href="javascript:void(0)" onclick="jumpTo(4)">Contact</a></li>
             </ul>
             <div class="right">
 
@@ -239,32 +239,32 @@
         <img src="img/circle.png" alt="">
     </div>
 
-    <div class="contactBox">
+    <form class="contactBox" action="/contact" method="post">
 <!--        <div class="infoBox">-->
 <!--            如影科技:ruying_fixer@163.com-->
 <!--        </div>-->
         <ul class="row1">
             <li class="NameBox">
                 <label>Name</label>
-                <input class="form-control" type="text" name="company">
+                <input class="form-control" type="text" name="name">
             </li>
             <li class="EmailBox">
                 <label>Email</label>
-                <input class="form-control" type="text" name="duty">
+                <input class="form-control" type="text" name="mail">
             </li>
             <li class="TelBox">
                 <label>Tel</label>
-                <input class="form-control" type="text" name="comment">
+                <input class="form-control" type="text" name="tel">
             </li>
         </ul>
 
-        <div class="massageBox">
-            <label>Massage</label>
-            <textarea class="form-control" type="text" name="duty"></textarea>
+        <div class="messageBox">
+            <label>Message</label>
+            <textarea class="form-control" type="text" name="message"></textarea>
         </div>
 
-        <button type="submit" id="submit">Sent</button>
-    </div>
+        <button type="submit" id="submit" >Sent</button>
+    </form>
 
     <a class="ref" href="http://www.beian.miit.gov.cn">
         版权所有:如影科技&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陕ICP备18009052号-4

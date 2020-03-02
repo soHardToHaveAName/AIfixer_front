@@ -2,11 +2,12 @@ $(function(){
     //当前图片的标号
     picIndex=0;
 
-    function jumpTo(i){
-        $('html,body').animate({
-            scrollTop:$(".aaa1").offset().top},{duration:500,easing:'swing'});
-        return false;
-    }
+
+    //导航栏hover：
+    // $(".nav").hover(function(){
+    //     $(this).find("a").css({color:"rgba(60,222,223,0.64)"});
+    //     console.log("hhhh");
+    // },);
 
     // 大图切换：
     $(".bigPic2").fadeOut(0);
@@ -148,9 +149,6 @@ $(function(){
     })
 
 
-
-
-
 });
 
 
@@ -197,3 +195,17 @@ $(function(){
     if (!doc.addEventListener) return;
     win.addEventListener(resizeEvt, recalc, false);
 })(document, window);
+
+//点击导航栏滑动页面：
+function jumpTo(i){
+    let H;
+    if(i==0)
+        H=0;
+    else
+        H=$(".title").eq(i-1).offset().top;
+    $('html,body').animate(
+        {scrollTop:H},
+        {duration:500,easing:'swing'}
+    );
+    return false;
+}
