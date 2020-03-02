@@ -149,6 +149,27 @@ $(function(){
     })
 
 
+    //Product 入场动画
+	/*
+    $(".smallPicBox").css({opacity:0});
+
+    $(window).scroll(function() {
+        //为了保证兼容性，这里取两个值，哪个有值取哪一个
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        var browHeight = document.documentElement.offsetHeight || document.body.offsetHeight;
+
+        halfH=$(".smallPicBox").css("height").substring(0,6);
+        H=$(".smallPicBox").offset().top+parseFloat(halfH);
+        console.log("scrollTop:"+scrollTop);
+        console.log("browHeight:"+browHeight);
+        console.log("H:"+H);
+        if(scrollTop+browHeight>H){
+            $(".smallPicBox").animate({opacity:1});
+        }
+    })*/
+
+
+
 });
 
 
