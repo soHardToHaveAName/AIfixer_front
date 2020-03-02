@@ -11,25 +11,12 @@
     font-size: 0;
 }
 
-.infoBox{
-    font-size: 0.13rem;
-    color: #f8f8f9;
-    background-color: #0b0a08;
-    text-align: center;
-    width: 50%;
-    margin:0 auto;
-    position: relative;
-    top:0.20rem;
-
-}
-
-
-
 .row1{
     margin-bottom:0.22rem;;
 }
 
 .row1>li{
+	
     font-size: 0;
     display: block;
     width: 32%;
@@ -39,6 +26,8 @@
 }
 
 li>input{
+	color: #f8f8f9;
+	font-size: 0.08rem;
     display: block;
     height: 0.20rem;
     width: 100%;
@@ -76,6 +65,8 @@ label{
 }
 
 .messageBox>textarea{
+	color: #f8f8f9;
+	font-size: 0.08rem;
     display: block;
     height: 1.15rem;
     width: 100%;
