@@ -2,7 +2,6 @@ $(function(){
     //当前图片的标号
     picIndex=0;
 
-
     //导航栏hover：
     // $(".nav").hover(function(){
     //     $(this).find("a").css({color:"rgba(60,222,223,0.64)"});
@@ -150,23 +149,35 @@ $(function(){
 
 
     //Product 入场动画
-	/*
-    $(".smallPicBox").css({opacity:0});
+
+
+
+    smallHeight=$(".smallPicBox").css("height");
+    $(".smallPicBox").css("height",parseInt(smallHeight));
+
+    $(".smallPicBox>img").css({width:0});
+
 
     $(window).scroll(function() {
         //为了保证兼容性，这里取两个值，哪个有值取哪一个
         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        var browHeight = document.documentElement.offsetHeight || document.body.offsetHeight;
+        var browHeight = document.documentElement.clientHeight || document.body.clientHeight;
 
         halfH=$(".smallPicBox").css("height").substring(0,6);
         H=$(".smallPicBox").offset().top+parseFloat(halfH);
         console.log("scrollTop:"+scrollTop);
         console.log("browHeight:"+browHeight);
         console.log("H:"+H);
-        if(scrollTop+browHeight>H){
-            $(".smallPicBox").animate({opacity:1});
-        }
-    })*/
+        if(scrollTop+browHeight<H){
+            setTimeout(function(){
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                var browHeight = document.documentElement.clientHeight || document.body.clientHeight;
+                if(scrollTop+browHeight>H){
+                    $(".smallPicBox>img").animate({width:"31.3%"});
+                }
+            },100);
+        };
+    })
 
 
 
@@ -216,6 +227,7 @@ $(function(){
     if (!doc.addEventListener) return;
     win.addEventListener(resizeEvt, recalc, false);
 })(document, window);
+
 
 //点击导航栏滑动页面：
 function jumpTo(i){

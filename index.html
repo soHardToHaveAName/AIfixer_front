@@ -239,7 +239,7 @@
         <img src="img/circle.png" alt="">
     </div>
 
-    <form class="contactBox" action="contact" method="post">
+    <div class="contactBox" >
 <!--        <div class="infoBox">-->
 <!--            如影科技:ruying_fixer@163.com-->
 <!--        </div>-->
@@ -264,7 +264,7 @@
         </div>
 
         <button type="submit" id="submit" >Sent</button>
-    </form>
+    </div>
 
     <a class="ref" href="http://www.beian.miit.gov.cn">
         版权所有:如影科技&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陕ICP备18009052号-4
@@ -273,3 +273,34 @@
 
 </body>
 </html>
+
+
+<script type="text/javascript">
+    var aInputs = document.getElementsByTagName('input');
+    var message=document.getElementsByTagName('textarea')[0];
+
+    var oBtn = document.getElementById('submit');
+
+    oBtn.onclick = function() {
+        console.log("name:" + aInputs[0].value);
+        console.log("email:" + aInputs[1].value);
+        console.log("tel:" + aInputs[2].value);
+        console.log("msg:" + message.value);
+        if (aInputs[0].value && aInputs[1].value && aInputs[2].value && message.value) {
+            $.ajax({
+                type: "post",
+                url: "http://localhost:8080/contact",
+                data: {"name": aInputs[0].value,
+                    "email": aInputs[1].value,
+                    "tel":aInputs[2].value,
+                    "message":message.value},
+                success: function () {
+                    console.log("发送成功！我们将在看到您的消息后与您联系！");
+                }
+            });//ajax
+        }
+        else{
+            alert("请输入完整信息！");
+        }
+    }
+</script>
