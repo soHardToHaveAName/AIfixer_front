@@ -144,19 +144,41 @@ $(function(){
     $(".rightIndexLine>a").click(choose);
 
     //效果体验 before->after
-
+    let experiencedL=false;
     $(".leftBtn").click(function(){
-        $(this).hide();
-        $(this).siblings().slideDown(2000);
+        if(!experiencedL) {
+            $(this).text("再来亿遍");
+            $(this).siblings().slideDown(2000);
+            experiencedL=true;
+        }
+        else{
+            $(this).siblings().slideUp(2000);
+            experiencedL=false;
+        }
     })
 
+    let experiencedR=false;
     $(".rightBtn").click(function(){
-        $(this).hide();
-        let newImg=$(this).siblings();
-        newImg.css({display:"block",width:"0"});
-        newImg.animate({
-            width:"2.10rem",
-        },2000);
+        if(!experiencedR) {
+            $(this).text("再来亿遍");
+            let newImg = $(this).siblings();
+            newImg.css({display: "block", width: "0"});
+            newImg.animate({
+                width: "2.10rem",
+            }, 2000);
+            experiencedR=true;
+        }
+        else{
+            let newImg = $(this).siblings();
+
+            newImg.animate({
+                width: "0rem",
+            }, 2000,function(){
+                newImg.css({display: "none"});
+            });
+
+            experiencedR=false;
+        }
     })
 
 
