@@ -144,23 +144,26 @@ $(function(){
     $(".rightIndexLine>a").click(choose);
 
     //效果体验 before->after
-    let experiencedL=false;
     $(".leftBtn").click(function(){
-        if(!experiencedL) {
-            $(this).text("再来亿遍");
+		console.log($(this).text());
+        if(!$(this).hasClass("experienced")){
+			$(this).addClass("experienced");
+            $(this).text("返回");
             $(this).siblings().slideDown(2000);
             experiencedL=true;
         }
         else{
-            $(this).siblings().slideUp(2000);
-            experiencedL=false;
+            $(this).siblings().slideUp(0);
+			$(this).text("一键体验");
+			//$(this).siblings().slideDown(2000);
+			$(this).removeClass("experienced");
         }
-    })
-
-    let experiencedR=false;
+    });
+	
     $(".rightBtn").click(function(){
-        if(!experiencedR) {
-            $(this).text("再来亿遍");
+        if(!$(this).hasClass("experienced")) {
+            $(this).addClass("experienced");
+			$(this).text("返回");
             let newImg = $(this).siblings();
             newImg.css({display: "block", width: "0"});
             newImg.animate({
@@ -170,14 +173,14 @@ $(function(){
         }
         else{
             let newImg = $(this).siblings();
-
+			$(this).removeClass("experienced");
+			$(this).text("一键体验");
             newImg.animate({
                 width: "0rem",
-            }, 2000,function(){
+            }, 0,function(){
                 newImg.css({display: "none"});
             });
-
-            experiencedR=false;
+			experiencedR=false;
         }
     })
 

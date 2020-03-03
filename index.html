@@ -99,7 +99,7 @@
 
     <div class="smallBoxCont">
         <div class="smallPicBox">
-            <img src="img/bs.jpg" alt="" class="smallPic1"><!--
+            <img src="img/bs.png" alt="" class="smallPic1"><!--
      --><img src="img/fb.jpg" alt="" class="smallPic2"><!--
      --><img src="img/quZao2.jpg" alt="" class="smallPic3">
         </div>
@@ -266,8 +266,23 @@
             <textarea class="form-control" type="text" name="message"></textarea>
         </div>
 
-        <button type="submit" id="submit" >Sent</button>
-        <p class='feedBack'>随时欢迎您的咨询！</p>
+
+        <div class="feedBackBox">
+            <div class="yesBox" style="display: none">
+                <img class="yes" src="img/yes.png" alt="">
+                <div class='feedBack'><p >发送成功！我们将在第一时间内与您联系！</p></div>
+            </div>
+
+            <div class="noBox" style="display: none">
+                <img class="no" src="img/no.png" alt="">
+                <div class='feedBack'><p >请输入完整信息！</p></div>
+            </div>
+        </div>
+
+
+
+		<button type="submit" id="submit" >Send</button>
+        
     </div>
 
     <a class="ref" href="http://www.beian.miit.gov.cn">
@@ -299,15 +314,15 @@
                     "tel":aInputs[2].value,
                     "message":message.value},
                 success: function () {
-                    console.log("发送成功！我们将在看到您的消息后与您联系！");
+                    console.log("邮件发送成功！");
                 }
             });//ajax
-            $(".feedBack").text("发送成功！我们将在第一时间内与您联系！");
-
-
+            $(".noBox").css({display:"none"});
+            $(".yesBox").fadeIn(100);
         }
         else{
-            $(".feedBack").text("请输入完整信息！");
+            $(".yesBox").css({display:"none"});
+            $(".noBox").fadeIn(100);
         }
     }
 </script>

@@ -26,6 +26,7 @@
 
 li>input{
 	color: #f8f8f9;
+    outline:none;
 	font-size: 0.08rem;
     display: block;
     height: 0.20rem;
@@ -65,6 +66,7 @@ label{
 
 .messageBox>textarea{
 	color: #f8f8f9;
+    outline:none;
 	font-size: 0.08rem;
     display: block;
     height: 1.15rem;
@@ -75,7 +77,7 @@ label{
 
 button{
     display: block;
-    margin: 0.23rem auto 0 auto;
+    margin: 0.10rem auto 0 auto;
     height: 0.21rem;
     width: 1.78rem;
     background-color: rgba(164, 199, 249, 0.8);
@@ -106,10 +108,34 @@ button{
     border-top: solid rgba(251, 251, 251, 0.62) 1px;
 }
 
-.feedBack{
+
+.contactBox .yes{
+    display: inline-block;
+    float: left;
+    width:0.08rem;
+    margin-top:0.01rem;
+}
+
+.contactBox .no{
+    display: inline-block;
+    float: left;
+    height:0.10rem;
+    top: 0.02rem;
+}
+
+.feedBackBox{
+    height:0.10rem;
+}
+
+/*.feedBack{*/
+/*    float: left;*/
+/*    height: 0.10rem;*/
+/*}*/
+
+.feedBack p{
     font-size: 0.08rem;
-    margin-top: 0.08rem;
+    line-height: 0.10rem;
     width: 100%;
-    text-align: center;
+    text-align: left;
     color: #f8f8f9;
 }
